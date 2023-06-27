@@ -8,22 +8,22 @@
 
 :root {
   --text-color: white;
-  --bg-url: url("/image/Background.png");
+  --bg-url: url("image/Background.png");
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-bg-url: url("/image/moon-stars.svg");
+  --switch-bg-url: url("image/moon-stars.svg");
 }
 
 .light {
   --text-color: black;
-  --bg-url: url("/image/Background-light.png");
+  --bg-url: url("image/Background-light.png");
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url("/image/sun.svg");
+  --switch-bg-url: url("image/sun.svg");
 }
 
 body {
@@ -183,11 +183,11 @@ ul li:hover a {
 
 @media (min-width: 700px){
   :root{
-    --bg-url: url("/image/bg-desktop.jpg");
+    --bg-url: url("image/bg-desktop.jpg");
   }
 
   .light{
-    --bg-url: url("/image/bg-desktop-light.jpg");
+    --bg-url: url("image/bg-desktop-light.jpg");
   }
 }
 
