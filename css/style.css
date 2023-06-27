@@ -28,10 +28,13 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 #container {
-  max-width: 50%;
+  max-width: 30.5rem;
+  width: 100%;
   margin: 3.5rem auto 0rem;
   padding: 0 1.5rem;
 }
@@ -70,10 +73,15 @@ body {
   z-index: 1;
   transform: translateY(-50%);
   cursor: pointer;
+  animation: slides-switch-out 0.4s;
+}
+
+.light #container__switch button {
+  animation: slides-switch-in 0.4s forwards;
 }
 
 #container__switch button:hover {
-  box-shadow: 0 0 0 0.25rem var(--highlight-color);
+  outline: 6px solid var(--highlight-color);
 }
 
 #container__switch span {
@@ -84,11 +92,6 @@ body {
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
-}
-
-.light #container__switch button {
-  right: 0;
-  left: initial;
 }
 
 ul {
@@ -112,25 +115,6 @@ ul li{
   transition: background 0.2s ease;
 }
 
-ul li a{
-  display: none;
-}
-
-ul li p{
-  display: none;
-  padding: 1rem 0;
-  color: var(--text-color);
-  font-size: 1rem;
-  text-align: center;
-  font-weight: 400;
-}
-
-ul li span:hover {
-  background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
-  border: none;
-}
-
 ul li:hover{
   display: block;
   text-align: center;
@@ -143,15 +127,33 @@ ul li:hover{
   box-shadow: 0 0 0 0.15rem var(--highlight-color);
 }
 
+ul li span:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+  border: none;
+}
+
+ul li p{
+  display: none;
+  padding: 1rem 0;
+  color: var(--text-color);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+
 ul li:hover p {
   display: block;
+}
+
+ul li a{
+  display: none;
 }
 
 ul li:hover a {
   display: block;
   font-weight: normal;
 }
-
 
 #container__social {
   display: flex;
@@ -177,4 +179,34 @@ ul li:hover a {
   padding: 1.5rem 0;
   text-align: center;
   font-size: 0.875rem;
+}
+
+@media (min-width: 700px){
+  :root{
+    --bg-url: url("/image/bg-desktop.jpg");
+  }
+
+  .light{
+    --bg-url: url("/image/bg-desktop-light.jpg");
+  }
+}
+
+@keyframes slides-switch-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+
+}
+
+@keyframes slides-switch-out{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+
 }
